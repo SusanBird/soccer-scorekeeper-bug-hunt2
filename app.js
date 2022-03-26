@@ -22,15 +22,15 @@ let score2 = 0;
 nameForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
+    const formData = new FormData(nameForm);
   
-    const name1 = formData.get('one');
-    const name2 = formData.get('two');
+    name1 = formData.get('team-one');
+    name2 = formData.get('team-two');
 
-    name1 === name1;
-    name2 === name2;
+    // name1 === name1;
+    // name2 === name2;
     
-    nameForm.reset();
+    // nameForm.reset();
     displayCurrentGameEl();
 });
 
@@ -41,13 +41,13 @@ teamOneAddButton.addEventListener('click', () => {
     displayCurrentGameEl();
 });
 
-teamTwoAddButton.addEventListener(() => {
+teamTwoAddButton.addEventListener('click', () => {
     score2++;
 
     displayCurrentGameEl();
 });
 
-teamOneSubtractButton.addEventListener(() => {
+teamOneSubtractButton.addEventListener('click', () => {
     score1--;
 
 });
