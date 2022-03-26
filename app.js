@@ -5,19 +5,23 @@ const pastGamesEl = document.getElementById('past-games-container');
 
 const nameForm = document.querySelectorAll('#name-form');
 const teamOneAddButton = document.querySelector('team-one-add-button');
+const teamTwoAddButton = document.querySelector('team-two-add-button');
 const teamOneSubtractButton = document.getElementById('team-one-subtract-button');
 const teamTwoSubtractButton = document.getElementById('team-two-subtract-button');
+const finishGameButton = document.querySelector('finish-game-button');
 const teamOneLabel = document.getElementById('team-one-name');
 const teamTwoLabel = document.getElementById('team-two-name');
 
 const pastGames = 0;
 
-const name1 = '';
-const name2 = '';
-const score1 = 0;
-const score2 = 0;
+let name1 = '';
+let name2 = '';
+let score1 = 0;
+let score2 = 0;
 
 nameForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
     const formData = new FormData();
   
     const name1 = formData.get('one');
@@ -34,7 +38,7 @@ nameForm.addEventListener('submit', (e) => {
 teamOneAddButton.addEventListener('click', () => {
     score1++;
     
-    renderCurrentGameEl();
+    displayCurrentGameEl();
 });
 
 teamTwoAddButton.addEventListener(() => {
